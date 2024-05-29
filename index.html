@@ -76,7 +76,11 @@
         .password-button:hover {
             background-color: #0056b3;
         }
-        .attendance-button, .leader-button {
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
             display: inline-block;
             padding: 10px 20px;
             border: none;
@@ -87,10 +91,9 @@
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-top: 20px;
-            text-align: center;
+            margin: 10px 10px 0 10px;
         }
-        .attendance-button:hover, .leader-button:hover {
+        .button:hover {
             background-color: #218838;
             transform: scale(1.05);
         }
@@ -109,7 +112,7 @@
         <div class="container">
             <h2>Group Members:</h2>
             <ul>
-                <li>Faris
+                <li>Faris | <strong>Leader</strong></li>
                 <li>Haziq | <strong>Deputy Leader</strong></li>
                 <li>Filza</li>
                 <li>Jasmeh</li>
@@ -117,7 +120,7 @@
                 <li>Karandeep</li>
                 <li>Kawanveer</li>
                 <li>Manha</li>
-                <li>Gunika | Leader </li>
+                <li>Gunika</li>
             </ul>
         </div>
         <div class="container">
@@ -142,11 +145,11 @@
             <p>Thank you for your cooperation.</p>
             <p><strong>Best regards,<br>Khawaja Haziq</strong></p>
         </div>
-        <div class="container">
-            <a href="attendance.html" class="attendance-button">Go to Attendance Page</a>
-        </div>
-        <div class="container">
-            <a href="leader.html" class="leader-button">Go to Leader Page</a>
+        <div class="button-container">
+            <a href="attendance.html" class="button">Go to Attendance Page</a>
+            <a href="leader.html" class="button">Go to Leader Page</a>
+            <a href="group1.html" class="button">Group 1</a>
+            <a href="group2.html" class="button">Group 2</a>
         </div>
     </div>
     <script>
