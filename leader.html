@@ -6,14 +6,14 @@
     <title>Leader Announcement</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: #ddd;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #181818;
+            color: #d1d1d1;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #333;
+            background-color: #282828;
             color: white;
             padding: 20px;
             text-align: center;
@@ -26,14 +26,31 @@
             margin: 20px auto;
             background-color: #333;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: skewX(25deg);
+            transition: left 0.3s ease;
+        }
+        .container:active::before {
+            left: 125%;
+        }
+        .container:active {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
         }
         h2 {
             margin-top: 0;
@@ -53,11 +70,21 @@
     <header>
         Leader Announcement
     </header>
-    <div class="container">
+    <div class="container" onclick="animateContainer(this)">
         <h2>New Leader: Gunika</h2>
         <p>We are pleased to announce that Gunika has been elected as our new leader.</p>
         <p>Congratulations, Gunika! We look forward to your guidance and leadership as we move forward with our projects and goals.</p>
         <p class="note">Let's all support Gunika in her new role and work together towards our shared success.</p>
     </div>
+    <script>
+        function animateContainer(element) {
+            element.style.transform = 'scale(1.1)';
+            element.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.6)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+                element.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.4)';
+            }, 300);
+        }
+    </script>
 </body>
 </html>
